@@ -1,0 +1,66 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />  
+  <title>Kalkulator</title>
+</head>
+<body>
+
+<script language="JavaScript">
+function dodawanie() {
+    var skl1 = parseFloat(document.Form.a.value);
+    var skl2 = parseFloat(document.Form.b.value);
+    var wynik = skl1 + skl2;
+    alert("Suma: " + wynik);
+}
+
+function odejmowanie() {
+    // Odwołanie przez indeksy (formularz 2, więc indeks [1])
+    var skl1 = parseFloat(document.forms[1].elements[0].value);
+    var skl2 = parseFloat(document.forms[1].elements[1].value);
+    var wynik = skl1 - skl2;
+    alert("Różnica: " + wynik);
+}
+
+function mnozenie() {
+    // Poprawione odwołanie do trzeciego formularza przez indeks [2]
+    var skl1 = parseFloat(document.forms[2].elements[0].value);
+    var skl2 = parseFloat(document.forms[2].elements[1].value);
+    var wynik = skl1 * skl2;
+    alert("Iloczyn: " + wynik);
+}
+
+function dzielenie() {
+    var skl1 = parseFloat(document.forms[2].elements[0].value);
+    var skl2 = parseFloat(document.forms[2].elements[1].value);
+    if (skl2 == 0) {
+        alert("Błąd: Nie można dzielić przez zero!");
+    } else {
+        var wynik = skl1 / skl2;
+        alert("Iloraz: " + wynik);
+    }
+}
+</script>
+
+<form name="Form">
+    a=<input type="Text" name="a"><br>
+    b=<input type="Text" name="b"><br>
+    <input type="Button" value="Oblicz sumę" onclick="dodawanie()">
+</form>
+<hr>
+
+<form name="Form2">
+    a=<input type="Text" name="a"><br>
+    b=<input type="Text" name="b"><br>
+    <input type="Button" value="Oblicz różnicę" onclick="odejmowanie()">
+</form>
+<hr>
+
+<form name="jakas_wymyslona_nazwa1">
+    a=<input type="Text" name="jakas_wymyslona_nazwa2"><br>
+    b=<input type="Text" name="jakas_wymyslona_nazwa3"><br>
+    <input type="Button" value="Oblicz iloczyn" onclick="mnozenie()">
+    <input type="Button" value="Oblicz iloraz" onclick="dzielenie()">
+</form>
+
+</body>
+</html>
